@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, Menu, X, UserCog } from 'lucide-react';
+import { ShoppingBag, Menu, X } from 'lucide-react';
 import { useStore } from '../store';
 import { useState } from 'react';
 import { CartDrawer } from './CartDrawer';
@@ -49,10 +49,6 @@ export function Layout() {
 
             {/* Icons */}
             <div className="flex items-center space-x-4 md:space-x-6">
-              <Link to="/admin" className="text-brand-900 hover:text-brand-500 transition-colors hidden sm:block" title="Admin">
-                <UserCog size={22} />
-              </Link>
-              
               {!isCheckout && (
                 <button 
                   onClick={() => setCartOpen(true)}
@@ -83,9 +79,6 @@ export function Layout() {
               <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">
                 Contact
               </a>
-              <Link to="/admin" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 rounded-md text-base font-medium text-brand-900 hover:bg-brand-100">
-                Admin Area
-              </Link>
             </div>
           </div>
         )}
